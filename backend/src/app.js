@@ -17,12 +17,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Servir front-end estático
-app.use(express.static(path.join(__dirname, '../../frontend')));
+
+app.use('/frontend', express.static(path.join(__dirname, '../../frontend')));
+
 
 // Rota raiz
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/login.html'));
-});
+    res.redirect('/frontend/login.html');
+  });
 
 // Rotas API
 app.use('/carros', carroRoutes);

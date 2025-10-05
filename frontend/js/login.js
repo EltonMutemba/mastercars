@@ -16,7 +16,7 @@ loginForm.addEventListener("submit", function (event) {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(response => {
-            window.location.href = "/frontend/dashboard.html";
+            window.location.href = "/frontend/dashboard.html"; 
         })
         .catch(error => {
             console.error("Erro no login:", error);
