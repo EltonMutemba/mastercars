@@ -1,6 +1,8 @@
 import CarroModel from '../models/carroModel.js';
 
 const CarroController = {
+  
+
   listar: async (req, res) => {
     try {
       const carros = await CarroModel.getAll();
