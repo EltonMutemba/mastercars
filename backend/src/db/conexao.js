@@ -1,22 +1,27 @@
 // src/db/conexao.js
-import mysql from "mysql2";
+import pkg from 'pg';
+import dotenv from 'dotenv';
+dotenv.config();
 
-// Cria a conexão direta
-const conexao = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "",          
-  database: "gestao_carros"
+const { Pool } = pkg;
+
+// Detecta se estamos em produção (Render) ou local
+const isProduction = process.env.NODE_ENV === 'production';
+
+const pool = new Pool({
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  user: process.env.DB_USER,
+  password: String(process.env.DB_PASSWORD),
+  database: process.env.DB_NAME,
+  ssl: isProduction ? { rejectUnauthorized: false } : false
 });
 
-// Conecta ao banco
-conexao.connect((erro) => {
-  if (erro) {
-    console.error("Erro ao conectar ao MySQL:", erro);
-  } else {
-    console.log("Conexão MySQL estabelecida com sucesso!");
-  }
-});
+pool.connect()
+  .then(client => {
+    console.log("Conexão PostgreSQL estabelecida com sucesso!");
+    client.release();
+  })
+  .catch(err => console.error('Erro ao conectar ao PostgreSQL:', err));
 
-export default conexao;
+export default pool;
