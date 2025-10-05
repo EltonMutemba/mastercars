@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Carro - MasterCars</title>
+  <link rel="stylesheet" href="css/style_add_car.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="pageTitle">Adicionar Carro</h1>
+
+    <form id="carroForm">
+      <input type="text" id="marca" placeholder="Marca" required>
+      <input type="text" id="modelo" placeholder="Modelo" required>
+      <input type="number" id="ano" placeholder="Ano" required>
+      
+      <button type="submit">Guardar</button>
+      <button onclick="cancelar()">Cancelar</button>
+      <p id="msg"></p>
+    </form>
+  </div>
+
+  <script src="js/add_car.js"></script>
+</body>
+</html>

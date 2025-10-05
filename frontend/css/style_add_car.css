@@ -1,0 +1,123 @@
+/* Reset e base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background: #f3f6fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  /* Container principal */
+  .container {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    transition: all 0.3s ease;
+  }
+  
+  .container:hover {
+    transform: translateY(-3px);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+    font-size: 1.8rem;
+  }
+  
+  /* Inputs */
+  input {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Botões */
+  button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  /* Botão Guardar */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 86, 179, 0.4);
+  }
+  
+  /* Botão Cancelar */
+  button[type="button"],
+  button[onclick="cancelar()"] {
+    background-color: #e9ecef;
+    color: #333;
+    border: 1px solid #ced4da;
+  }
+  
+  button[type="button"]:hover,
+  button[onclick="cancelar()"]:hover {
+    background-color: #dee2e6;
+    border-color: #adb5bd;
+  }
+  
+  /* Alinhamento dos botões lado a lado */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form button {
+    margin-top: 10px;
+  }
+  
+  /* Layout dos botões lado a lado */
+  form div.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4%;
+    margin-top: 5px;
+  }
+  
+  /* Mensagem */
+  #msg {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterCars - Login</title>
+    <link rel="stylesheet" href="css/style_login.css">
+
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterCars - Login</title>
+    <link rel="stylesheet" href="css/style_login.css">
+</head>
+
+<body>
+
+    <div class="card login-card">
+        <h1>MasterCars</h1>
+        <p class="muted">Entre para continuar</p>
+
+        <!-- Formulário com submit -->
+        <form id="loginForm">
+            <input type="email" id="email" class="input" placeholder="Email" autocomplete="email" required>
+            <input type="password" id="password" class="input" placeholder="Password" autocomplete="current-password"
+                required>
+
+            <div class="login-buttons">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <a href="registro.html" class="btn btn-ghost">Registrar</a>
+            </div>
+
+            <p class="forgot-password">
+                <a href="#" id="forgotPasswordLink">Esqueci a senha</a>
+            </p>
+
+            <p id="loginMsg" class="muted"></p>
+        </form>
+    </div>
+    
+      
+    <script src="js/login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCVSFV3qfh_mwrAvSP_Or6CdM6rpxbmTKo",
+            authDomain: "masterwash-e0a55.firebaseapp.com",
+            projectId: "masterwash-e0a55",
+            storageBucket: "masterwash-e0a55.firebasestorage.app",
+            messagingSenderId: "459707355995",
+            appId: "1:459707355995:web:c6bc6071f7ceeac0b2407e"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        
+    </script>
+</body>
+</html>

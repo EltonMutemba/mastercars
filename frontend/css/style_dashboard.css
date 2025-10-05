@@ -1,0 +1,245 @@
+/*
+ * Variáveis de Design Global
+ */
+ :root {
+    --primary-color: #007bff; /* Azul MasterCars */
+    --primary-hover-color: #0056b3;
+    --text-color: #333;
+    --muted-color: #6c757d;
+    --background-color: #f8f9fa; 
+    --card-background: #ffffff; 
+    --border-color: #e9ecef; /* Borda mais suave */
+    --success-color: #28a745; 
+    --danger-color: #dc3545;
+
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Sombra mais visível */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+    /* Centralização Horizontal do Bloco de Conteúdo */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
+    min-height: 100vh;
+    padding-top: 50px; 
+    padding-bottom: 50px;
+}
+
+/*
+ * Estilo do Título
+ */
+.page-header {
+    font-size: 2.5rem; /* Título maior */
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/*
+ * Estilo do Cartão (Container da Tabela)
+ */
+.card.list-card {
+    background-color: var(--card-background);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md); 
+    width: 95%;
+    max-width: 1000px; /* Mais espaço para a tabela */
+}
+
+/*
+ * Container de Ações (Novo Carro)
+ */
+.actions-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+    margin-bottom: var(--spacing-md);
+    padding-right: var(--spacing-sm); /* Espaço interno para alinhamento com a tabela */
+}
+
+/*
+ * Estilos da Tabela
+ */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.car-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.car-table th, .car-table td {
+    padding: var(--spacing-sm);
+    white-space: nowrap; 
+    vertical-align: middle;
+}
+
+/* Cabeçalho da Tabela */
+.car-table thead th {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.header-row {
+    border-bottom: 3px solid var(--primary-color); /* Linha azul mais grossa e moderna */
+}
+
+/* Linhas da Tabela (zebra stripes para leitura fácil) */
+.car-table tbody tr:nth-child(even) {
+    background-color: #f7f7f7; /* Cor de fundo suave para linhas pares */
+}
+
+/*
+ * Estilos dos Botões
+ */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    transition: background-color 0.3s, opacity 0.3s;
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* Botões de Ação na Tabela */
+.btn-sm {
+    padding: 0.25rem 0.5rem; 
+    font-size: 0.8rem;
+    margin-left: 0.5rem; 
+}
+
+.btn-success {
+    background-color: var(--success-color); 
+}
+.btn-success:hover {
+    opacity: 0.85;
+}
+.btn-danger {
+    background-color: var(--danger-color); 
+}
+.btn-danger:hover {
+    opacity: 0.85;
+}
+
+.main-header {
+    background-color: var(--card-background); /* Fundo branco ou claro */
+    box-shadow: var(--shadow-sm); /* Sombra suave para destacar */
+    width: 100%;
+    height: 60px;
+    
+    /* Torna-o fixo no topo */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que fique acima de tudo */
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda, navegação à direita */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color); /* Linha sutil no link ativo/hover */
+}
+
+/* Botão Sair - usa estilo fantasma para ser discreto */
+.btn-ghost-header {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-ghost-header:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* ------------------
+ * FOOTER (Rodapé)
+ * ------------------ */
+.main-footer {
+    width: 100%;
+    background-color: #343a40; /* Fundo escuro elegante */
+    color: #f8f9fa; /* Texto claro */
+    padding: var(--spacing-md) 0;
+    margin-top: auto; /* Empurra o footer para o final da página */
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.main-footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ced4da; /* Cor dos links ligeiramente cinza */
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.link-separator {
+    color: #6c757d;
+}

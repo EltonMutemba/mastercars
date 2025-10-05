@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterCars - Lista de Carros</title>
+    <link rel="stylesheet" href="css/style_dashboard.css"> 
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">MasterCars</div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Dashboard</a>
+                <a href="#" class="nav-link">Perfil</a>
+                <a href="login.html" class="btn btn-ghost-header">Sair</a>
+            </nav>
+        </div>
+    </header>
+    
+    <h1 class="page-header">Listas dos carros</h1>
+
+    <div class="card list-card">
+        
+        <div class="actions-container">
+            <button onclick="adicionarCarro()" class="btn btn-primary">Adicionar Novo Carro</button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="car-table">
+                <thead>
+                    <tr class="header-row">
+                        <th style="width: 5%;">ID</th>
+                        <th style="width: 25%;">Marca</th>
+                        <th style="width: 30%;">Modelo</th>
+                        <th style="width: 15%;">Ano</th>
+                        <th style="width: 25%; text-align: right;">Ações</th> 
+                    </tr>
+                </thead>
+                <tbody id="tabela-carros-body">
+                   
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 MasterCars. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidade</a>
+            <span class="link-separator">|</span>
+            <a href="#">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
