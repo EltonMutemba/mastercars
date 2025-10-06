@@ -1,3 +1,10 @@
+// dashboard.js
+
+// Detecta se estamos em local ou produção
+const BACKEND_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:8081'
+  : 'https://nome-do-teu-backend.onrender.com'; // substitui pelo URL do teu backend no Render
+
 // Redirecionar para add_car.html para adicionar
 function adicionarCarro() {
     window.location.href = "/frontend/add_car.html";
@@ -8,13 +15,12 @@ function editarCarro(id) {
     window.location.href = `/frontend/add_car.html?id=${id}`;
 }
 
-
 // Deletar carro 
 async function deletarCarro(id) {
     if (!confirm('Deseja realmente deletar este carro?')) return;
 
     try {
-        const response = await fetch(`http://localhost:8081/carros/${id}`, { method: 'DELETE' });
+        const response = await fetch(`${BACKEND_URL}/carros/${id}`, { method: 'DELETE' });
         const data = await response.json();
         if (response.ok) {
             carregarCarros(); // Atualiza tabela
@@ -23,15 +29,14 @@ async function deletarCarro(id) {
         }
     } catch (err) {
         console.error('Erro ao deletar carro:', err);
+        alert('Erro ao conectar com o backend.');
     }
 }
 
-
-  // Função para buscar os carros da API
- 
+// Função para buscar os carros da API
 async function carregarCarros() {
   try {
-    const resposta = await fetch("http://localhost:8081/carros"); // sua API
+    const resposta = await fetch(`${BACKEND_URL}/carros`); // usa BACKEND_URL
     const carros = await resposta.json();
 
     const tbody = document.getElementById("tabela-carros-body");
@@ -53,11 +58,9 @@ async function carregarCarros() {
     });
   } catch (err) {
     console.error("Erro ao carregar carros:", err);
+    alert('Erro ao conectar com o backend.');
   }
 }
 
 // Chama a função quando a página carregar
 window.onload = carregarCarros;
-
-
-
