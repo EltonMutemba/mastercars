@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MasterCars - Lista de Carros</title>
-    <link rel="stylesheet" href="css/style_dashboard.css"> 
+    <link rel="stylesheet" href="css/style_dashboard.css">
 </head>
 
 <body>
@@ -19,11 +19,16 @@
             </nav>
         </div>
     </header>
-    
+
+
+    <img id="imagemNeima" src="D04B5225.jpg" alt="neima" style="display:none;">
+    <h2 id="troca">Click aqui</h2>
+    <p id="mensagem" style="display:none; font-size: 20px; color: red;"></p>
+
     <h1 class="page-header">Listas dos carros</h1>
 
     <div class="card list-card">
-        
+
         <div class="actions-container">
             <button onclick="adicionarCarro()" class="btn btn-primary">Adicionar Novo Carro</button>
         </div>
@@ -36,15 +41,15 @@
                         <th style="width: 25%;">Marca</th>
                         <th style="width: 30%;">Modelo</th>
                         <th style="width: 15%;">Ano</th>
-                        <th style="width: 25%; text-align: right;">Ações</th> 
+                        <th style="width: 25%; text-align: right;">Ações</th>
                     </tr>
                 </thead>
                 <tbody id="tabela-carros-body">
-                   
+
                 </tbody>
             </table>
         </div>
-        
+
     </div>
 
     <footer class="main-footer">
@@ -57,6 +62,25 @@
     </footer>
 
     <script src="js/dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const h2 = document.getElementById('troca');
+            const img = document.getElementById('imagemNeima');
+            const msg = document.getElementById('mensagem');
+        
+            h2.addEventListener('click', () => {
+                // Mostra a imagem
+                img.style.display = 'block';
+        
+                // Mostra a mensagem
+                msg.textContent = "Neima eu te amo ❤️";
+                msg.style.display = 'block';
+        
+                // Opcional: troca o texto do h2
+                h2.textContent = "💖";
+            });
+        });
+        </script>
 </body>
 
 </html>

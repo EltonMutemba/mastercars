@@ -243,3 +243,15 @@ body {
 .link-separator {
     color: #6c757d;
 }
+
+img {
+    width: 250px;
+}
+
+#troca {
+    cursor: pointer; /* muda o cursor ao passar o mouse */
+}
+
+#troca:hover {
+    color: #dc3545;
+}
