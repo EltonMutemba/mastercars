@@ -1,9 +1,9 @@
-// dashboard.js
-
 // Detecta se estamos em local ou produção
-const BACKEND_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:8081'
-  : 'https://nome-do-teu-backend.onrender.com'; // substitui pelo URL do teu backend no Render
+const PRODUCTION_URL = 'https://mastercars-b0ah.onrender.com'; // substitui pela URL real do teu backend no Render
+
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8081'
+    : PRODUCTION_URL;
 
 // Redirecionar para add_car.html para adicionar
 function adicionarCarro() {

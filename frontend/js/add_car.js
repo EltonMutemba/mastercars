@@ -1,9 +1,14 @@
-// add_car.js
+// ==============================================================================
+// CONFIGURAÇÃO DA API (BACKEND)
+// ==============================================================================
 
-// Detecta se estamos em local ou produção
-const BACKEND_URL = window.location.hostname === 'localhost'
-  ? 'http://localhost:8081'
-  : 'https://nome-do-teu-backend.onrender.com'; // substitui pelo URL real do teu backend no Render
+const PRODUCTION_URL = 'https://mastercars-b0ah.onrender.com'; // substitui pela URL real do teu backend no Render
+
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8081'
+    : PRODUCTION_URL;
+
+// ==============================================================================
 
 // Pega parâmetros da URL (id do carro para edição)
 const urlParams = new URLSearchParams(window.location.search);
